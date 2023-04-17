@@ -3,7 +3,8 @@ import TaskList from './Components/TaskList';
 import TaskForm from './Components/TaskForm';
 import TaskContext from './Contexts/TaskContext';
 import './App.css';
-
+import { Routes, Route } from 'react-router-dom';
+import NavBar from './Components/NavBar';
 function App() {
   const [tasks, setTasks] = useState([]);
 
@@ -32,11 +33,19 @@ function App() {
   };
 
   return (
+    // <TaskContext.Provider value={taskContextValue}>
+    //   <div>
+    //     <TaskList />
+    //     <TaskForm />
+    //   </div>
+    // </TaskContext.Provider>
     <TaskContext.Provider value={taskContextValue}>
-      <div>
-        <TaskList />
-        <TaskForm />
-      </div>
+    <NavBar/>
+    <Routes>
+        {/* <Route path="/" exact element={<App />} /> */}
+        <Route path="/taskList" element={<TaskList />} />
+        <Route path="/taskForm" element={<TaskForm />} />
+    </Routes>
     </TaskContext.Provider>
   );
 }

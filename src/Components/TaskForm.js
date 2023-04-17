@@ -1,9 +1,11 @@
 import { useState, useContext, useRef } from "react";
 import TaskContext from "../Contexts/TaskContext";
+import { useNavigate } from 'react-router-dom';
 function TaskForm() {
   const [task, setTask] = useState("");
   const inputRef = useRef(null);
   const { handleAddTask } = useContext(TaskContext);
+  const navigate = useNavigate();
   const handleChange = (event) => {
     setTask(event.target.value);
   };
@@ -12,6 +14,7 @@ function TaskForm() {
     handleAddTask(task);
     setTask("");
     inputRef.current.focus(); // Focus the input after adding a task
+    navigate('/taskList')
   };
   return (
     <div className="form">
