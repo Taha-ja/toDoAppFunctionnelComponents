@@ -33,16 +33,9 @@ function App() {
   };
 
   return (
-    // <TaskContext.Provider value={taskContextValue}>
-    //   <div>
-    //     <TaskList />
-    //     <TaskForm />
-    //   </div>
-    // </TaskContext.Provider>
     <TaskContext.Provider value={taskContextValue}>
     <NavBar/>
     <Routes>
-        {/* <Route path="/" exact element={<App />} /> */}
         <Route path="/taskList" element={<TaskList />} />
         <Route path="/taskForm" element={<TaskForm />} />
     </Routes>
