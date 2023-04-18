@@ -6,13 +6,14 @@ function TaskList() {
         handleDeleteTask(index);
     }
     return (
-        <div>
-      <div>
+        <div className='flex items-center justify-center h-screen'>
+      <div >
           {tasks.map((task,index) =>
 
-              <div key={index}>
-                {task}
-              <button onClick={()=>deleteTask(index)}>supprimer</button></div>
+              <div key={index} className='bg-gray-100 m-5 flex flex-row justify-around w-[20rem] items-center'>
+                <div>{task}</div>
+              <button onClick={()=>deleteTask(index)} className='bg-red-500 hover:bg-red-400 p-2 m-2 px-3 rounded text-white font-bold'>X</button>
+              </div>
 
           
           )}

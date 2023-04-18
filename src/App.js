@@ -23,7 +23,7 @@ function App() {
   };
 
   const handleDeleteTask = (index) => {
-    setTasks(tasks.filter((task, i) => i !== index));
+    setTasks(tasks.filter((_, i) => i !== index));
   };
 
   const taskContextValue = {
@@ -33,7 +33,7 @@ function App() {
   };
 
   return (
-    <TaskContext.Provider value={taskContextValue}>
+    <TaskContext.Provider  value={taskContextValue} >
     <NavBar/>
     <Routes>
         <Route path="/taskList" element={<TaskList />} />
