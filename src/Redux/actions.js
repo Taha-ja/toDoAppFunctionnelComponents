@@ -18,9 +18,7 @@ export const GetTodosAction = () => async (dispatch) => {
   try {
     //dispatch for reducer to return loading :true
     dispatch({ type: GET_TODOS_REQUEST });
-
     const { data } = await axios.get("http://localhost:3000/todos");
-
     //dispatch for reducer to return Data in store
     dispatch({ type: GET_TODOS_SUCCESS, payload: data });
   } catch (e) {
@@ -42,7 +40,6 @@ export const PostTodoAction = (todo) => async (dispatch) => {
 
     dispatch({ type: POST_TODO_SUCCESS, payload: data });
     console.log(data);
-    //dispatch(GetTodosAction());
   } catch (error) {
     dispatch({
       type: POST_TODO_FAIL,
@@ -59,7 +56,6 @@ export const DeleteTodoAction = (id) => async (dispatch) => {
     await axios.delete(`http://localhost:3000/todos/${id}`);
     dispatch({ type: DELETE_TODO_SUCCESS, payload: id });
     console.log(id);
-    //dispatch(GetTodosAction());
   } catch (error) {
     dispatch({
       type: DELETE_TODO_FAIL,

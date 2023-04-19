@@ -9,9 +9,6 @@ import {
   DELETE_TODO_SUCCESS,
   DELETE_TODO_FAIL,
 } from "./Constant";
-// import { POST_TODO_REQUEST, POST_TODO_SUCCESS, POST_TODO_FAIL } from './Constant';
-// import { DELETE_TODO_REQUEST, DELETE_TODO_SUCCESS, DELETE_TODO_FAIL } from './Constant';
-
 export const REDUCER_TODO = (state = { todos: [] }, action) => {
   switch (action.type) {
     case POST_TODO_REQUEST:
